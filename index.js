@@ -7,7 +7,7 @@ var bufferAlloc = require('buffer-alloc-unsafe')
 var LEAF_TYPE = bufferFrom([0])
 var PARENT_TYPE = bufferFrom([1])
 var ROOT_TYPE = bufferFrom([2])
-var HYPERCORE = bufferFrom('hypercore')
+var DDATABASE = bufferFrom('ddatabase')
 
 exports.keyPair = function (seed) {
   var publicKey = bufferAlloc(sodium.crypto_sign_PUBLICKEYBYTES)
@@ -83,7 +83,7 @@ exports.randomBytes = function (n) {
 
 exports.discoveryKey = function (tree) {
   var digest = bufferAlloc(32)
-  sodium.crypto_generichash(digest, HYPERCORE, tree)
+  sodium.crypto_generichash(digest, DDATABASE, tree)
   return digest
 }
 
