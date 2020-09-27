@@ -6,8 +6,8 @@ const LEAF_TYPE = Buffer.from([0])
 const PARENT_TYPE = Buffer.from([1])
 const ROOT_TYPE = Buffer.from([2])
 
-const HYPERCORE = Buffer.from('hypercore')
-const HYPERCORE_CAP = Buffer.from('hypercore capability')
+const DDATABASE = Buffer.from('ddatabase')
+const HYPERCORE_CAP = Buffer.from('ddatabase capability')
 
 exports.capability = function (key, split) {
   if (!split) return null
@@ -130,7 +130,7 @@ exports.randomBytes = function (n) {
 
 exports.discoveryKey = function (publicKey) {
   const digest = Buffer.allocUnsafe(32)
-  sodium.crypto_generichash(digest, HYPERCORE, publicKey)
+  sodium.crypto_generichash(digest, DDATABASE, publicKey)
   return digest
 }
 
