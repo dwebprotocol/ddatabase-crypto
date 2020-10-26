@@ -1,7 +1,7 @@
 {
   "name": "ddatabase-crypto",
   "version": "4.0.0",
-  "description": "The crypto primitives used in ddatabase, extracted into a separate module",
+  "description": "Library for generating dDatabase keypairs.",
   "main": "index.js",
   "dependencies": {
     "sodium-universal": "^3.0.0",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "https://github.com/distributedweb/ddatabase-crypto.git"
   },
-  "author": "Mathias Buus (@mafintosh)",
+  "author": "Peeps Labs <peepslabs@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/distributedweb/ddatabase-crypto/issues"
