@@ -1,15 +1,15 @@
-# ddatabase-crypto
+# @ddatabase/crypto
 
 The crypto primitives used in ddatabase, extracted into a separate module
 
 ```
-npm install ddatabase-crypto
+npm install @ddatabase/crypto
 ```
 
 ## Usage
 
 ``` js
-const crypto = require('ddatabase-crypto')
+const crypto = require('@ddatabase/crypto')
 
 const keyPair = crypto.keyPair()
 console.log(keyPair) // prints a ed25519 keypair
