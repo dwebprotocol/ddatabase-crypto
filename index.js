@@ -7,14 +7,14 @@ const PARENT_TYPE = Buffer.from([1])
 const ROOT_TYPE = Buffer.from([2])
 
 const DDATABASE = Buffer.from('ddatabase')
-const HYPERCORE_CAP = Buffer.from('ddatabase capability')
+const DDATABASE_CAP = Buffer.from('ddatabase capability')
 
 exports.capability = function (key, split) {
   if (!split) return null
 
   const out = Buffer.allocUnsafe(32)
   sodium.crypto_generichash_batch(out, [
-    HYPERCORE_CAP,
+    DDATABASE_CAP,
     split.tx.slice(0, 32),
     key
   ], split.rx.slice(0, 32))
@@ -27,7 +27,7 @@ exports.remoteCapability = function (key, split) {
 
   const out = Buffer.allocUnsafe(32)
   sodium.crypto_generichash_batch(out, [
-    HYPERCORE_CAP,
+    DDATABASE_CAP,
     split.rx.slice(0, 32),
     key
   ], split.tx.slice(0, 32))
